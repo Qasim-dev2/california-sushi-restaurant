@@ -639,24 +639,14 @@ footer{background:#060606;padding:4rem 2rem 2rem;border-top:1px solid rgba(255,2
 
   /* Hero */
   #hero {
-    padding-top: 60px; /* Space for fixed navbar */
+    padding-top: 0;
     padding-bottom: 0;
-    min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: auto;
+    min-height: 100vh;
   }
   .hero-bg{animation:none;}
   .orb{display:none;}
   .hero-content{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2.5rem 1rem 1.5rem;
+    padding: 5rem 1rem 2rem;
   }
   .hero-chip{font-size:.54rem;padding:.3rem .9rem;letter-spacing:.2em;margin-bottom: 0.8rem;}
   .hero-h1{font-size:clamp(2.4rem,10vw,4.2rem); margin-bottom: 0.3rem;}
@@ -666,7 +656,10 @@ footer{background:#060606;padding:4rem 2rem 2rem;border-top:1px solid rgba(255,2
   .btn-red,.btn-glass{width:100%;max-width:280px;justify-content:center;padding:.82rem 1.5rem;}
   .hero-scroll{display:none;}
   .hero-stats{
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     flex-wrap:wrap;
     width: 100%;
     background: rgba(10, 10, 10, 0.9);
