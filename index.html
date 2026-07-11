@@ -623,16 +623,39 @@ footer{background:#060606;padding:4rem 2rem 2rem;border-top:1px solid rgba(255,2
   #navbar{padding:0 1.1rem;height:60px;}
 
   /* Hero */
+  #hero {
+    padding-top: 60px; /* Space for fixed navbar */
+    padding-bottom: 0;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+  }
   .hero-bg{animation:none;}
   .orb{display:none;}
-  .hero-content{padding:2rem 1rem;}
-  .hero-chip{font-size:.54rem;padding:.3rem .9rem;letter-spacing:.2em;}
-  .hero-h1{font-size:clamp(2.6rem,12vw,4.5rem);}
-  .hero-desc{font-size:.86rem;}
-  .hero-btns{flex-direction:column;align-items:center;}
+  .hero-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 1rem 1.5rem;
+  }
+  .hero-chip{font-size:.54rem;padding:.3rem .9rem;letter-spacing:.2em;margin-bottom: 0.8rem;}
+  .hero-h1{font-size:clamp(2.4rem,10vw,4.2rem); margin-bottom: 0.3rem;}
+  .hero-tagline{margin-bottom: 0.8rem;}
+  .hero-desc{font-size:.86rem; margin-bottom: 1.5rem; max-width: 400px;}
+  .hero-btns{flex-direction:column;align-items:center;width: 100%;}
   .btn-red,.btn-glass{width:100%;max-width:280px;justify-content:center;padding:.82rem 1.5rem;}
   .hero-scroll{display:none;}
-  .hero-stats{flex-wrap:wrap;}
+  .hero-stats{
+    position: relative;
+    flex-wrap:wrap;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.9);
+  }
   .stat{padding:.55rem 1rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.07);width:50%;}
   .stat:nth-child(2n){border-right:none;}
   .stat:nth-last-child(-n+2){border-bottom:none;}
@@ -678,7 +701,7 @@ footer{background:#060606;padding:4rem 2rem 2rem;border-top:1px solid rgba(255,2
 =============================================== */
 @media(max-width:480px){
   /* Hero */
-  .hero-h1{font-size:clamp(2.4rem,13vw,3.8rem);}
+  .hero-h1{font-size:clamp(2.2rem,11vw,3.5rem);}
   .hero-chip{font-size:.5rem;padding:.28rem .75rem;}
   .stat{width:50%;padding:.45rem .8rem;}
   .stat-n{font-size:1.15rem;}
@@ -742,8 +765,12 @@ footer{background:#060606;padding:4rem 2rem 2rem;border-top:1px solid rgba(255,2
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="https://www.ubereats.com/ca/store/the-sushi-california-restaurant/q_cWGlUtVVKrsRMrSzDOwA?diningMode=PICKUP" target="_blank" class="nav-order">Order Now</a></li>
   </ul>
+  <button class="nav-ham" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span class="ham-bar"></span>
+    <span class="ham-bar"></span>
+    <span class="ham-bar"></span>
+  </button>
 </nav>
-<button class="nav-ham" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span class="ham-bar"></span><span class="ham-bar"></span><span class="ham-bar"></span></button>
 <div id="mobile-menu" aria-hidden="true">
   <ul>
     <li><a href="#gallery" class="mob-link">Gallery</a></li>
