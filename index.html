@@ -109,7 +109,7 @@ ul{list-style:none;}
 #hero{
   position:relative;min-height:100vh;
   display:flex;align-items:center;justify-content:center;
-  overflow:hidden;
+  overflow:clip;
 }
 .hero-bg{
   position:absolute;inset:0;
@@ -252,7 +252,7 @@ section{padding:6rem 2rem;}
 /* ==============================================
    GALLERY STRIP
 =============================================== */
-#gallery{background:linear-gradient(180deg,#0a0a0a,#111);padding:4.5rem 0 0;overflow:hidden;}
+#gallery{background:linear-gradient(180deg,#0a0a0a,#111);padding:4.5rem 0 0;overflow:clip;}
 .gallery-head{text-align:center;padding:0 2rem 3rem;}
 .photo-strip{
   display:flex;gap:1rem;padding:.5rem 1rem 1.5rem;
@@ -278,7 +278,7 @@ section{padding:6rem 2rem;}
 /* ==============================================
    ABOUT
 =============================================== */
-#about{background:#0c0c0c;}
+#about{background:#0c0c0c;overflow:clip;}
 .about-grid{
   display:grid;grid-template-columns:1fr 1fr;
   gap:5rem;align-items:center;max-width:1160px;margin:0 auto;
@@ -318,7 +318,7 @@ section{padding:6rem 2rem;}
 =============================================== */
 #specials{
   background:var(--crimson);padding:5.5rem 2rem;
-  position:relative;overflow:hidden;
+  position:relative;overflow:clip;
 }
 #specials::before{
   content:'';position:absolute;top:-180px;left:-180px;
@@ -364,7 +364,7 @@ section{padding:6rem 2rem;}
 /* ==============================================
    MENU
 =============================================== */
-#menu{background:#090909;position:relative;}
+#menu{background:#090909;position:relative;overflow:clip;}
 #menu::before{
   content:'';position:absolute;bottom:-120px;left:-200px;
   width:700px;height:700px;border-radius:50%;
@@ -463,7 +463,7 @@ section{padding:6rem 2rem;}
 /* ==============================================
    HOURS & INFO
 =============================================== */
-#info{background:linear-gradient(140deg,#0a0a0a 0%,#111 100%);position:relative;overflow:hidden;}
+#info{background:linear-gradient(140deg,#0a0a0a 0%,#111 100%);position:relative;overflow:clip;}
 #info::before{
   content:'';position:absolute;top:-200px;right:-200px;
   width:600px;height:600px;border-radius:50%;
@@ -673,10 +673,11 @@ footer{background:#060606;padding:4rem 2rem 2rem;border-top:1px solid rgba(255,2
   .strip-card{flex:0 0 62vw;height:260px;}
 
   /* About */
-  .about-img-wrap{padding-right:1.5rem;padding-bottom:1.5rem;}
+  .about-img-wrap{padding-right:1.5rem;padding-bottom:1.5rem;overflow:clip;}
   .about-img{height:260px;}
-  .about-badge{width:90px;height:90px;}
+  .about-badge{width:90px;height:90px;bottom:-1rem;right:-1rem;}
   .ab-year{font-size:1.3rem;}
+  .about-accent{display:none;}
   .about-feats{grid-template-columns:1fr 1fr;}
 
   /* Specials */
@@ -721,6 +722,7 @@ footer{background:#060606;padding:4rem 2rem 2rem;border-top:1px solid rgba(255,2
   .about-feats{grid-template-columns:1fr;}
   .about-img-wrap{padding-right:1rem;padding-bottom:1rem;}
   .about-img{height:230px;}
+  .about-badge{bottom:-.75rem;right:-.75rem;}
 
   /* Specials */
   .spec-cards{grid-template-columns:1fr;}
