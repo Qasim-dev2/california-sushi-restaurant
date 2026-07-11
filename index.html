@@ -592,33 +592,137 @@ footer{background:#060606;padding:4rem 2rem 2rem;border-top:1px solid rgba(255,2
 .rv1{transition-delay:.1s;}.rv2{transition-delay:.2s;}.rv3{transition-delay:.3s;}.rv4{transition-delay:.4s;}
 
 /* ==============================================
-   RESPONSIVE
+   REDUCED MOTION
+=============================================== */
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
+  html{scroll-behavior:auto;}
+  .hero-bg{animation:none;}
+}
+
+/* ==============================================
+   RESPONSIVE — 1024px
 =============================================== */
 @media(max-width:1024px){
   .about-grid{grid-template-columns:1fr;gap:3rem;}
-  .about-img{height:380px;}
-  .spec-inner{grid-template-columns:1fr 1fr;}
-  .spec-main{grid-column:1/-1;}
-  .spec-cards{grid-column:1/-1;}
+  .about-img{height:360px;}
+  .about-img-wrap{padding-right:2.5rem;padding-bottom:2rem;}
+  .spec-inner{grid-template-columns:1fr;gap:2rem;}
+  .spec-cards{grid-template-columns:1fr 1fr;}
   .foot-grid{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:768px){
-  .nav-links{display:none;}
-  .hero-stats{flex-wrap:wrap;}
-  .stat{padding:.75rem 1.5rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.07);width:50%;}
-  .info-grid{grid-template-columns:1fr;}
-  .spec-inner{grid-template-columns:1fr;}
-  .spec-cards{grid-template-columns:1fr;}
-  .foot-grid{grid-template-columns:1fr;}
-  .strip-card{flex:0 0 250px;height:310px;}
-  section{padding:4rem 1.5rem;}
-}
-@media(max-width:480px){
   .mgrid{grid-template-columns:1fr;}
-  .cgrid{grid-template-columns:1fr;}
-  .about-feats{grid-template-columns:1fr;}
-  .spec-cards{grid-template-columns:1fr;}
 }
+
+/* ==============================================
+   RESPONSIVE — 768px MOBILE
+=============================================== */
+@media(max-width:768px){
+  /* Navbar */
+  .nav-links{display:none;}
+  .nav-ham{display:flex;}
+  #navbar{padding:0 1.1rem;height:60px;}
+
+  /* Hero */
+  .hero-bg{animation:none;}
+  .orb{display:none;}
+  .hero-content{padding:2rem 1rem;}
+  .hero-chip{font-size:.54rem;padding:.3rem .9rem;letter-spacing:.2em;}
+  .hero-h1{font-size:clamp(2.6rem,12vw,4.5rem);}
+  .hero-desc{font-size:.86rem;}
+  .hero-btns{flex-direction:column;align-items:center;}
+  .btn-red,.btn-glass{width:100%;max-width:280px;justify-content:center;padding:.82rem 1.5rem;}
+  .hero-scroll{display:none;}
+  .hero-stats{flex-wrap:wrap;}
+  .stat{padding:.55rem 1rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.07);width:50%;}
+  .stat:nth-child(2n){border-right:none;}
+  .stat:nth-last-child(-n+2){border-bottom:none;}
+  .stat-n{font-size:1.35rem;}
+
+  /* Gallery */
+  .strip-card{flex:0 0 62vw;height:260px;}
+
+  /* About */
+  .about-img-wrap{padding-right:1.5rem;padding-bottom:1.5rem;}
+  .about-img{height:260px;}
+  .about-badge{width:90px;height:90px;}
+  .ab-year{font-size:1.3rem;}
+  .about-feats{grid-template-columns:1fr 1fr;}
+
+  /* Specials */
+  .spec-cards{grid-template-columns:1fr 1fr;}
+  .spec-title{font-size:1.9rem;}
+
+  /* Menu */
+  .tabs{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:.5rem;}
+  .tab{flex-shrink:0;}
+  .mgrid{grid-template-columns:1fr;}
+  .ngrid{grid-template-columns:1fr 1fr;}
+  .cgrid{grid-template-columns:1fr;}
+
+  /* Info */
+  .info-grid{grid-template-columns:1fr;}
+  .glass-card{padding:1.8rem;}
+
+  /* Reviews */
+  .rev-grid{grid-template-columns:1fr;}
+
+  /* Footer */
+  .foot-grid{grid-template-columns:1fr 1fr;gap:2rem;}
+  .foot-brand{grid-column:1/-1;}
+
+  section{padding:4rem 1.25rem;}
+}
+
+/* ==============================================
+   RESPONSIVE — 480px SMALL MOBILE
+=============================================== */
+@media(max-width:480px){
+  /* Hero */
+  .hero-h1{font-size:clamp(2.4rem,13vw,3.8rem);}
+  .hero-chip{font-size:.5rem;padding:.28rem .75rem;}
+  .stat{width:50%;padding:.45rem .8rem;}
+  .stat-n{font-size:1.15rem;}
+
+  /* Gallery */
+  .strip-card{flex:0 0 76vw;height:230px;}
+
+  /* About */
+  .about-feats{grid-template-columns:1fr;}
+  .about-img-wrap{padding-right:1rem;padding-bottom:1rem;}
+  .about-img{height:230px;}
+
+  /* Specials */
+  .spec-cards{grid-template-columns:1fr;}
+  .spec-title{font-size:1.65rem;}
+
+  /* Menu */
+  .ngrid{grid-template-columns:1fr;}
+  .mitem{padding:.95rem 1rem;}
+  .mi-name{font-size:.88rem;}
+
+  /* Footer */
+  .foot-grid{grid-template-columns:1fr;}
+  .foot-bottom{flex-direction:column;align-items:flex-start;gap:.5rem;}
+
+  section{padding:3.5rem .9rem;}
+  .glass-card{padding:1.4rem;}
+}
+
+/* Hamburger */
+.nav-ham{display:none;flex-direction:column;gap:5px;width:40px;height:40px;align-items:center;justify-content:center;border-radius:8px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .3s;}
+.nav-ham:hover{background:rgba(255,255,255,.08);}
+.ham-bar{width:22px;height:2px;background:var(--white);border-radius:2px;transition:transform .3s,opacity .3s;}
+.nav-ham.open .ham-bar:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-ham.open .ham-bar:nth-child(2){opacity:0;}
+.nav-ham.open .ham-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+/* Mobile drawer */
+#mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;z-index:999;background:rgba(13,13,13,.97);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07);padding:1.4rem;}
+#mobile-menu.open{display:block;}
+#mobile-menu ul{display:flex;flex-direction:column;gap:.15rem;}
+#mobile-menu a.mob-link{display:block;padding:.85rem 1rem;border-radius:12px;font-size:.85rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(240,236,228,.78);transition:background .25s;}
+#mobile-menu a.mob-link:hover,#mobile-menu a.mob-link:active{background:rgba(255,255,255,.07);color:var(--white);}
+.mob-order{display:block;margin-top:1rem;text-align:center;background:var(--crimson);color:var(--white);padding:.9rem;border-radius:100px;font-weight:700;font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;}
+
 </style>
 </head>
 <body>
@@ -639,6 +743,17 @@ footer{background:#060606;padding:4rem 2rem 2rem;border-top:1px solid rgba(255,2
     <li><a href="https://www.ubereats.com/ca/store/the-sushi-california-restaurant/q_cWGlUtVVKrsRMrSzDOwA?diningMode=PICKUP" target="_blank" class="nav-order">Order Now</a></li>
   </ul>
 </nav>
+<button class="nav-ham" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span class="ham-bar"></span><span class="ham-bar"></span><span class="ham-bar"></span></button>
+<div id="mobile-menu" aria-hidden="true">
+  <ul>
+    <li><a href="#gallery" class="mob-link">Gallery</a></li>
+    <li><a href="#about" class="mob-link">About</a></li>
+    <li><a href="#menu" class="mob-link">Menu</a></li>
+    <li><a href="#info" class="mob-link">Hours</a></li>
+    <li><a href="#reviews" class="mob-link">Reviews</a></li>
+  </ul>
+  <a href="https://www.ubereats.com/ca/store/the-sushi-california-restaurant/q_cWGlUtVVKrsRMrSzDOwA?diningMode=PICKUP" target="_blank" rel="noopener" class="mob-order">Order on Uber Eats</a>
+</div>
 
 <!-- ======== HERO ======== -->
 <section id="hero">
@@ -1125,65 +1240,101 @@ footer{background:#060606;padding:4rem 2rem 2rem;border-top:1px solid rgba(255,2
 
 <!-- ======== SCRIPTS ======== -->
 <script>
-// --- Navbar ---
+// ==========================================
+// Navbar + back-to-top (passive scroll)
+// ==========================================
 const navbar = document.getElementById('navbar');
 const btt = document.getElementById('btt');
 window.addEventListener('scroll', () => {
-  const s = window.scrollY > 60;
+  const s = window.scrollY > 50;
   navbar.classList.toggle('scrolled', s);
   btt.classList.toggle('show', s);
+}, { passive: true });
+
+// ==========================================
+// Hamburger / mobile menu
+// ==========================================
+const ham = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+ham.addEventListener('click', () => {
+  const open = ham.classList.toggle('open');
+  mobileMenu.classList.toggle('open', open);
+  ham.setAttribute('aria-expanded', String(open));
+  mobileMenu.setAttribute('aria-hidden', String(!open));
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+document.querySelectorAll('.mob-link').forEach(link => {
+  link.addEventListener('click', () => {
+    ham.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    ham.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  });
 });
 
-// --- Particles ---
+// ==========================================
+// Particles — reduced on mobile
+// ==========================================
 const pc = document.getElementById('particles');
 pc.style.cssText = 'position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1;';
-for (let i = 0; i < 26; i++) {
+const isMob = window.innerWidth < 769;
+const pCount = isMob ? 6 : 18;
+for (let i = 0; i < pCount; i++) {
   const p = document.createElement('div');
-  p.classList.add('particle');
-  const sz = Math.random() * 3 + 1;
-  p.style.cssText = `width:${sz}px;height:${sz}px;left:${Math.random()*100}%;animation-duration:${Math.random()*14+10}s;animation-delay:${Math.random()*14}s;opacity:${Math.random()*.5+.2};`;
+  p.className = 'particle';
+  const sz = Math.random() * 2.5 + 1;
+  p.style.cssText = 'width:' + sz + 'px;height:' + sz + 'px;left:' + (Math.random()*100) + '%;animation-duration:' + (Math.random()*12+10) + 's;animation-delay:' + (Math.random()*12) + 's;opacity:' + (Math.random()*.4+.15) + ';';
   pc.appendChild(p);
 }
 
-// --- Tab switching ---
+// ==========================================
+// Tab switching
+// ==========================================
 function switchTab(id) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
-  const btn = document.querySelector(`[onclick="switchTab('${id}')"]`);
+  const btn = document.querySelector('[onclick="switchTab(\'' + id + '\')"]');
   const panel = document.getElementById('p-' + id);
-  if (btn) btn.classList.add('on');
+  if (btn) { btn.classList.add('on'); btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' }); }
   if (panel) panel.classList.add('on');
-  const ms = document.getElementById('menu');
-  if (ms) {
-    const r = ms.getBoundingClientRect();
-    if (r.top < -60 || r.top > window.innerHeight) {
-      ms.scrollIntoView({behavior:'smooth', block:'start'});
-    }
-  }
 }
 
-// --- Scroll reveal ---
-const revEls = document.querySelectorAll('.rev');
+// ==========================================
+// Scroll reveal
+// ==========================================
 const ro = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }});
-}, {threshold: 0.1, rootMargin: '0px 0px -36px 0px'});
-revEls.forEach(el => ro.observe(el));
+}, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+document.querySelectorAll('.rev').forEach(el => ro.observe(el));
 
-// --- Auto scroll gallery ---
+// ==========================================
+// Gallery auto-scroll — pauses off-screen & on touch
+// ==========================================
 const strip = document.querySelector('.photo-strip');
-let ival;
-function autoScroll() {
+let ival = null;
+let touching = false;
+
+const stripObs = new IntersectionObserver(([entry]) => {
+  entry.isIntersecting ? startScroll() : stopScroll();
+}, { threshold: 0.1 });
+stripObs.observe(strip);
+
+function startScroll() {
+  if (ival || touching) return;
   ival = setInterval(() => {
-    if (strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 8) {
-      strip.scrollTo({left: 0, behavior: 'smooth'});
+    if (strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 12) {
+      strip.scrollTo({ left: 0, behavior: 'smooth' });
     } else {
-      strip.scrollBy({left: 270, behavior: 'smooth'});
+      strip.scrollBy({ left: 240, behavior: 'smooth' });
     }
-  }, 3200);
+  }, 3600);
 }
-strip.addEventListener('mouseenter', () => clearInterval(ival));
-strip.addEventListener('mouseleave', autoScroll);
-autoScroll();
+function stopScroll() { clearInterval(ival); ival = null; }
+strip.addEventListener('mouseenter', () => { touching = true; stopScroll(); });
+strip.addEventListener('mouseleave', () => { touching = false; startScroll(); });
+strip.addEventListener('touchstart', () => { touching = true; stopScroll(); }, { passive: true });
+strip.addEventListener('touchend', () => { setTimeout(() => { touching = false; startScroll(); }, 2200); }, { passive: true });
 </script>
 </body>
 </html>
